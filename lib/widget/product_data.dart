@@ -29,13 +29,35 @@ Widget productData(ProductModel model) {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            model.title,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-            maxLines: 1,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                model.title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
+              ),
+              Row(
+                children: [
+                  Text(
+                    '\$ ${model.price}',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    maxLines: 1,
+                  ),
+                  const Spacer(),
+                  const Icon(
+                    Icons.add_shopping_cart,
+                    size: 28,
+                  ),
+                ],
+              )
+            ],
           ),
         ],
       ),
